@@ -1,0 +1,301 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Zadaniya Api",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/products/{batches_id}": {
+            "get": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "Products",
+                "description": "Bu joydan Productlarni olasiz",
+                "operationId": "Products",
+                "parameters": [
+                    {
+                        "name": "batches_id",
+                        "in": "path",
+                        "description": "bu yerga batches_id ni kiriting",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong username address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/canculate/{storage_id}": {
+            "get": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "Products",
+                "description": "Bu joydan kichikina xisobotni olasiz",
+                "operationId": "canculate",
+                "parameters": [
+                    {
+                        "name": "storage_id",
+                        "in": "path",
+                        "description": "bu yerga storage_id ni kiriting",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong username address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/buying": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "buying",
+                "description": "buying",
+                "operationId": "buying",
+                "requestBody": {
+                    "description": "buying",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "provider_id",
+                                    "batches_id",
+                                    "count",
+                                    "price"
+                                ],
+                                "properties": {
+                                    "provider_id": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "batches_id": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "product_id": {
+                                        "type": "integer",
+                                        "format": "integer",
+                                        "example": "1"
+                                    },
+                                    "count": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "price": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong username address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/selling": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "order-to-client",
+                "description": "order-to-client",
+                "operationId": "order-to-client",
+                "requestBody": {
+                    "description": "buying",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "provider_id",
+                                    "batches_id",
+                                    "conut"
+                                ],
+                                "properties": {
+                                    "client_id": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "storage_id": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "count": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "price": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong username address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/refounds": {
+            "post": {
+                "tags": [
+                    "Api"
+                ],
+                "summary": "refound",
+                "description": "refound",
+                "operationId": "refound",
+                "requestBody": {
+                    "description": "buying",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "provider_id",
+                                    "batches_id",
+                                    "conut"
+                                ],
+                                "properties": {
+                                    "type": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "client"
+                                    },
+                                    "client_id": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "0"
+                                    },
+                                    "storage_id": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "count": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "price": {
+                                        "type": "integer",
+                                        "format": "text",
+                                        "example": "1"
+                                    },
+                                    "comment": {
+                                        "type": "string",
+                                        "format": "text",
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "422": {
+                        "description": "Wrong credentials response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Sorry, wrong username address or password. Please try again"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
